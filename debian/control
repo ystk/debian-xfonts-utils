@@ -2,18 +2,31 @@ Source: xfonts-utils
 Section: x11
 Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
-Uploaders: David Nusinow <dnusinow@debian.org>, Julien Cristau <jcristau@debian.org>, Brice Goglin <bgoglin@debian.org>
-Build-Depends: debhelper (>= 6.0.7~), pkg-config, quilt, libxfont-dev (>= 1:1.0.0), libx11-dev (>= 2:1.0.0), x11proto-core-dev, libfreetype6-dev, libfontenc-dev
-Standards-Version: 3.8.3
+Uploaders: Cyril Brulebois <kibi@debian.org>
+Build-Depends:
+ debhelper (>= 6.0.7~),
+ pkg-config,
+ quilt,
+ libxfont-dev (>= 1:1.0.0),
+ libx11-dev (>= 2:1.0.0),
+ x11proto-core-dev,
+ libfreetype6-dev,
+ libfontenc-dev,
+ xutils-dev (>= 1:7.5+4),
+Standards-Version: 3.9.2
 Vcs-Git: git://git.debian.org/git/pkg-xorg/font/xfonts-utils
 Vcs-Browser: http://git.debian.org/?p=pkg-xorg/font/xfonts-utils.git
 
 Package: xfonts-utils
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, x11-common, xfonts-encodings
-Replaces: xutils (<< 1:1.0.1-1), fonttosfnt (<< 1.0.4)
+Multi-Arch: foreign
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ x11-common,
+ xfonts-encodings,
 Description: X Window System font utility programs
- xfonts-utils provides a set of utility programs shipped with the X Window 
+ xfonts-utils provides a set of utility programs shipped with the X Window
  System that are needed for font management.
  .
  The programs in this package include:

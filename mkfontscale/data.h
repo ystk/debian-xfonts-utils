@@ -19,7 +19,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-/* $XFree86: xc/programs/mkfontscale/data.h,v 1.3 2003/04/30 20:39:43 herrb Exp $ */
 
 #ifndef _MKS_DATA_H_
 #define _MKS_DATA_H_ 1
@@ -27,8 +26,10 @@
 /* Order is significant.  For example, some B&H fonts are hinted by
    URW++, and both strings appear in the notice. */
 
-static char *notice_foundries[][2] =
-    {{"Bigelow", "b&h"},
+static const char *notice_foundries[][2] =
+    {{"Iorsh", "culmus"},
+     {"Gnat", "culmus"},
+     {"Bigelow", "b&h"},
      {"Adobe", "adobe"},
      {"Bitstream", "bitstream"},
      {"Monotype", "monotype"},
@@ -50,7 +51,7 @@ static char *notice_foundries[][2] =
 /* It should not contain useless entries (such as UNKN) nor duplicate
    entries for padding both with spaces and NULs. */
 
-static char *vendor_foundries[][2] =
+static const char *vendor_foundries[][2] =
     {{"ADBE", "adobe"},
      {"AGFA", "agfa"},
      {"ALTS", "altsys"},
@@ -60,6 +61,7 @@ static char *vendor_foundries[][2] =
      {"B&H", "b&h"},
      {"BITS", "bitstream"},
      {"CANO", "cannon"},
+     {"CLM", "culmus"},
      {"DYNA", "dynalab"},
      {"EPSN", "epson"},
      {"FJ",  "fujitsu"},

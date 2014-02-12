@@ -9,7 +9,7 @@ usr/share/man/man1/mkfontdir.1
 usr/share/man/man1/mkfontscale.1
 usr/share/man/man1/ucs2any.1
 usr/share/aclocal/fontutil.m4
-usr/lib/pkgconfig/fontutil.pc
+usr/lib/pkgconfig/fontutil.pc usr/share/pkgconfig/
 ../local/update-fonts-alias usr/sbin
 ../local/update-fonts-dir usr/sbin
 ../local/update-fonts-scale usr/sbin

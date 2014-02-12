@@ -43,27 +43,24 @@ build-stamp: $(STAMP_DIR)/genscripts $(addprefix $(STAMP_DIR)/build-,$(SUBDIRS))
 
 $(STAMP_DIR)/build-%: $(STAMP_DIR)/patch
 	dh_testdir
-	mkdir -p $*-obj-$(DEB_BUILD_GNU_TYPE)
-	cd $*-obj-$(DEB_BUILD_GNU_TYPE) && \
+	mkdir -p $*-build
+	cd $*-build && \
 		../$*/configure --prefix=/usr --mandir=\$${prefix}/share/man \
 			--infodir=\$${prefix}/share/info $(confflags) \
 			--with-mapdir=\$${prefix}/share/fonts/X11/util \
 			CFLAGS="$(CFLAGS)" CPPFLAGS="-D_GNU_SOURCE"
-	cd $*-obj-$(DEB_BUILD_GNU_TYPE) && \
+	cd $*-build && \
 		$(MAKE)
 	>$@
 
 clean: xsfclean
 	dh_testdir
-	dh_testroot
 	rm -f build-stamp
-
 	rm -f config.cache config.log config.status
 	rm -f */config.cache */config.log */config.status
 	rm -f conftest* */conftest*
 	rm -rf autom4te.cache */autom4te.cache
-	rm -rf *-obj-*
-
+	rm -rf *-build
 	dh_clean
 
 install: build
@@ -73,7 +70,7 @@ install: build
 	dh_installdirs
 
 	for FILE in $(SUBDIRS); do \
-		cd "$$FILE"-obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install ; \
+		cd "$$FILE"-build && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install ; \
 		cd ..; \
 	done
 
