@@ -2,11 +2,11 @@ Source: xfonts-utils
 Section: x11
 Priority: optional
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
-Uploaders: Cyril Brulebois <kibi@debian.org>
 Build-Depends:
- debhelper (>= 6.0.7~),
+ debhelper (>= 7),
  pkg-config,
  quilt,
+ autotools-dev,
  libxfont-dev (>= 1:1.0.0),
  libx11-dev (>= 2:1.0.0),
  x11proto-core-dev,

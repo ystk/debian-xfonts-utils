@@ -1,3 +1,23 @@
+xfonts-utils (1:7.7+2) unstable; urgency=medium
+
+  * Delete no-longer-used debian/xsfbs/
+  * Restore quilt usage (no-op now, we don't have any patches).
+  * Remove Cyril from Uploaders.
+  * Allow parallel builds.
+
+ -- Julien Cristau <jcristau@debian.org>  Sat, 12 Jul 2014 19:38:52 +0200
+
+xfonts-utils (1:7.7+1) unstable; urgency=medium
+
+  * bdftopcf 1.0.4
+  * mkfontscale 1.1.1
+  * Bump debhelper compat level to 7.
+  * Switch to dh with the autotools-dev addon; should give us updated
+    config.{guess,sub} (closes: #717842).
+  * Disable silent build rules.
+
+ -- Julien Cristau <jcristau@debian.org>  Wed, 25 Dec 2013 17:43:35 +0100
+
 xfonts-utils (1:7.7~1) unstable; urgency=low
 
   * font-util 1.3.0

@@ -2,11 +2,6 @@
 
 set -e
 
-THIS_PACKAGE=xfonts-utils
-THIS_SCRIPT=postrm
-
-#INCLUDE_SHELL_LIB#
-
 EXCLUDE_DIR=/var/lib/xfonts
 EXCLUDE=$EXCLUDE_DIR/excluded-aliases
 
